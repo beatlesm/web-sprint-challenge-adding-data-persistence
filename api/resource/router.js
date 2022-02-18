@@ -9,7 +9,13 @@ router.get('/', (req, res, next) => {
       .catch(next)
   })
 
-
+  router.post('/', (req, res, next) => {
+    helpers.add(req.body)
+      .then(resource => {
+        res.status(201).json(resource);
+      })
+      .catch(next);
+  });
 
 
 module.exports = router;

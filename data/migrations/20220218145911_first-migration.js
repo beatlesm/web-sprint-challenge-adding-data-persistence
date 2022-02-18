@@ -12,7 +12,7 @@
         })
         .createTable('resources', table => {
             table.increments('resource_id')
-            table.text('resource_name', 128).notNullable().unsigned()
+            table.text('resource_name', 128).notNullable().unique()
             table.string('resource_description', 256)            
         })
         .createTable('tasks', table => {
